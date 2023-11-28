@@ -28,7 +28,7 @@ const landingPageSignup = () => {
                 lastname: lname,
                 email: email,
                 birthdate: birthdate,
-                images: [],
+                images: {},
                 biography: [],
                 hobbies: [],
             },

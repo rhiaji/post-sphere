@@ -8,16 +8,17 @@ export default async (req, res) => {
         const apiKey = req.headers['x-api-key']
 
         if (apiKey !== VALID_API_KEY) {
+            console.error('Unauthorized: Invalid API key')
             return res.status(401).json({ error: 'Unauthorized' })
         }
 
         const db = await connectToDb()
 
         if (req.method === 'GET') {
-            const account = req.body.username || req.query.account
-
             try {
+                const account = req.query.account // Assuming account is passed as a query parameter
                 const data = await db.collection('users').findOne({ username: account })
+                console.log('User data:', data)
                 return res.status(200).json([data])
             } catch (error) {
                 console.error('Error getting user data:', error)
@@ -39,17 +40,22 @@ export default async (req, res) => {
                     } else if (content === 'cover photo') {
                         updateField = 'images.cover'
                     } else {
+                        console.error('Invalid content for profile update')
                         return res.status(400).json({ error: 'Invalid content for profile update' })
                     }
 
                     const result = await db.collection('users').updateOne({ _id: new ObjectId(userId) }, { $set: { [updateField]: userData } })
 
+                    console.log('Update result:', result)
+
                     if (result.matchedCount > 0) {
                         return res.status(200).json(result)
                     } else {
+                        console.error(`Error ${content} update`)
                         return res.status(404).json({ error: `Error ${content} update` })
                     }
                 } else {
+                    console.error('Invalid userId')
                     return res.status(400).json({ error: 'Invalid userId' })
                 }
             } catch (error) {
@@ -61,7 +67,7 @@ export default async (req, res) => {
             }
         }
     } catch (error) {
-        console.error(error)
+        console.error('Internal Server Error:', error)
         return res.status(500).json({ error: 'Internal Server Error' })
     }
 }

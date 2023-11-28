@@ -1,25 +1,28 @@
 const apikey = process.env.NEXT_PUBLIC_REACT_APP_API
-const apiUrl = 'https://post-sphere-rhiaji.vercel.app/api' // http://localhost:3000/api or your sitename
+const apiUrl = 'http://localhost:3000/api' // http://localhost:3000/api or https://post-sphere-rhiaji.vercel.app/api
 
 // Generic function to handle fetching data from the server
 async function handleFetch(url, method, data) {
-    // Construct the full URL by combining the base API URL and the provided endpoint
-    const response = await fetch(`${apiUrl}/${url}`, {
-        method,
-        headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apikey,
-        },
-        body: data ? JSON.stringify(data) : undefined,
-    })
+    try {
+        const response = await fetch(`${apiUrl}/${url}`, {
+            method,
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': apikey,
+            },
+            body: data ? JSON.stringify(data) : undefined,
+        })
 
-    // Check if the response is successful; otherwise, throw an error
-    if (!response.ok) {
-        throw new Error('Network response was not ok')
+        if (!response.ok) {
+            console.error('Error:', response.status, response.statusText)
+            throw new Error('Network response was not ok')
+        }
+
+        return response.json()
+    } catch (error) {
+        console.error('Fetch error:', error)
+        throw error
     }
-
-    // Parse and return the JSON data from the response
-    return response.json()
 }
 
 // Fetches all posts from the server
