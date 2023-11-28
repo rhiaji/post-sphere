@@ -1,0 +1,47 @@
+.container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 60px;
+    background-color: #0b0a0d;
+}
+
+.section {
+    display: flex;
+    justify-content: space-evenly;
+    width: 1000px;
+}
+
+.section nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.section li {
+    margin-left: 10px;
+}
+
+.section li a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    color: #5571e5;
+}
+
+.section button {
+    color: inherit;
+    background-color: #0866ff;
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+    width: 100px;
+}
+
+.section button:hover {
+    cursor: pointer;
+    background-color: #2779fd;
+}

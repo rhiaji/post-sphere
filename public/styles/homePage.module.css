@@ -1,0 +1,236 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: calc(100vh - 60px);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 700px;
+    height: auto;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #222222;
+}
+
+.post section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.postbtn {
+    color: #b8b8b8;
+    font-size: 16px;
+    text-align: start;
+    padding: 10px;
+    width: 90%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #343434;
+    border: none;
+    transition: 0.4s ease;
+}
+
+.postbtn:hover {
+    cursor: pointer;
+    background-color: #474747;
+}
+
+.postContent {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: auto;
+    border: 1px solid #2f3031;
+    border-radius: 10px;
+    top: 20%;
+    left: 35%;
+    background-color: #222222;
+}
+
+.head {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #2f3031;
+}
+
+.head p {
+    margin-right: 30%;
+}
+
+.head button {
+    color: #b8b8b8;
+    margin-right: 5%;
+    font-size: 16px;
+    font-weight: 600;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #3a3b3c;
+}
+
+.head button:hover {
+    cursor: pointer;
+    background-color: #525355;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: 25px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.input textarea {
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    resize: none;
+}
+
+.createbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #2f3031;
+}
+
+.createbtn button {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    width: 90%;
+    height: 30px;
+    background-color: #913fe2;
+    border: none;
+    border-radius: 10px;
+}
+
+.allposts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #222222;
+}
+
+.allposts section:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.allposts section:nth-child(2) {
+    padding: 10px;
+    margin-bottom: 20px;
+    height: auto;
+}
+
+.allposts section:nth-child(3) {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 40px;
+    border-top: 1px solid rgb(78, 78, 78);
+}
+
+.allposts section:nth-child(4) {
+    height: auto;
+    border-top: 1px solid rgb(78, 78, 78);
+}
+
+.commentArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #3a3b3c;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.commentArea textarea {
+    color: inherit;
+    font-size: 16px;
+    padding: 5px;
+    width: 90%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    resize: none;
+}
+
+.comments {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 100%;
+    border-left: 1px solid rgb(148, 148, 148);
+}
+
+.comments div {
+    display: flex;
+    align-items: center;
+}
+
+.comments h6 {
+    margin-left: 10px;
+}
+
+.comments span {
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: #3a3b3c;
+}
+
+.name {
+    color: #5571e5;
+}
+
+.time {
+    color: rgb(4, 128, 35);
+}

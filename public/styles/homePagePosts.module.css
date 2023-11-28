@@ -1,0 +1,126 @@
+.allposts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #222222;
+}
+
+.allposts section:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.allposts section:nth-child(2) {
+    padding: 10px;
+    margin-bottom: 20px;
+    height: auto;
+}
+
+.allposts section:nth-child(3) {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 40px;
+    border-top: 1px solid rgb(78, 78, 78);
+}
+
+.allposts section:nth-child(4) {
+    height: auto;
+    border-top: 1px solid rgb(78, 78, 78);
+}
+
+.allposts button {
+    font-size: 14px;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.allposts button:hover {
+    cursor: pointer;
+    color: #5571e5;
+}
+
+.commentArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #3a3b3c;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.commentArea textarea {
+    color: inherit;
+    font-size: 16px;
+    padding: 5px;
+    width: 90%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    resize: none;
+}
+
+.comments {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 100%;
+    border-left: 1px solid rgb(148, 148, 148);
+}
+
+.comments div {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.comments h6 {
+    margin-left: 10px;
+}
+
+.comments span {
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: #3a3b3c;
+}
+
+.comments textarea {
+    color: inherit;
+    font-size: 14px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    resize: none;
+}
+
+.name {
+    display: flex;
+    color: #5571e5;
+}
+
+.name div {
+    margin-left: 10px;
+}
+
+.time {
+    color: rgb(4, 128, 35);
+}
