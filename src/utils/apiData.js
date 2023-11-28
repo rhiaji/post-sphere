@@ -1,5 +1,5 @@
 const apikey = process.env.NEXT_PUBLIC_REACT_APP_API
-const apiUrl = 'http://localhost:3000/api'
+const apiUrl = 'https://post-sphere-rhiaji.vercel.app/api' // http://localhost:3000/api or your sitename
 
 // Generic function to handle fetching data from the server
 async function handleFetch(url, method, data) {
