@@ -1,5 +1,5 @@
 const apikey = process.env.NEXT_PUBLIC_REACT_APP_API
-const apiUrl = 'https://post-sphere-rhiaji.vercel.app/api' // http://localhost:3000/api or https://post-sphere-rhiaji.vercel.app/api
+const apiUrl = 'http://localhost:3000/api' // http://localhost:3000/api or https://post-sphere-rhiaji.vercel.app/api
 
 // Generic function to handle fetching data from the server
 async function handleFetch(url, method, data) {
@@ -58,6 +58,11 @@ export async function getUsers() {
 // Fetches user account data for a specific user
 export async function getAccount(user) {
     return handleFetch(`user?account=${user}`, 'GET')
+}
+
+// Deletes a specific user account data
+export async function deleteAccount(deleteData) {
+    return handleFetch('user', 'DELETE', deleteData)
 }
 
 // Updates user account information

@@ -65,6 +65,26 @@ export default async (req, res) => {
                     details: error.message,
                 })
             }
+        } else if (req.method === 'DELETE') {
+            const action = req.body.action
+            const data = req.body.data
+            try {
+                if (ObjectId.isValid(data.userId) && action === 'Delete User Data') {
+                    const result = await db.collection('users').deleteOne({ _id: new ObjectId(data.userId) })
+
+                    if (result.deletedCount > 0) {
+                        return res.status(200).json({ message: 'User deleted successfully' })
+                    } else {
+                        return res.status(404).json({ error: 'User not found' })
+                    }
+                }
+            } catch (error) {
+                console.error('Error deleting User data:', error)
+                return res.status(500).json({
+                    error: 'Could not delete user data',
+                    details: error.message,
+                })
+            }
         }
     } catch (error) {
         console.error('Internal Server Error:', error)
